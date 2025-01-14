@@ -1,0 +1,110 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Companies"
+weight = 2
+
+[[main]]
+parent = "Companies"
+name = "Kroo Bank"
+url = "#kroo"
+weight = 1
+
+[[main]]
+parent = "Companies"
+name = "ONSI"
+url = "#collectivebenefits"
+weight = 2
+
+[[main]]
+parent = "Companies"
+name = "Lenny"
+url = "#lenny"
+weight = 3
+
+[[main]]
+parent = "Companies"
+name = "CompareTheMarket"
+url = "#comparethemarket"
+weight = 4
+
+# [[main]]
+# parent = "Companies"
+# name = "Penny"
+# url = "#penny"
+# weight = 5
+
+[[main]]
+parent = "Companies"
+name = "Upshot"
+url = "#upshot"
+weight = 6
+
+[[main]]
+parent = "Companies"
+name = "Togethera"
+url = "#togethera"
+weight = 7
+
+# [[main]]
+# parent = "Companies"
+# name = "TapTo"
+# url = "#tapto"
+# weight = 8
+
+# [[main]]
+# parent = "Companies"
+# name = "Yell Labs"
+# url = "#yelllabs"
+# weight = 9
+
+# [[main]]
+# weight = 4
+# name = "Pages"
+
+# [[main]]
+# parent = "Pages"
+# name = "Blog"
+# url = "/blog"
+
+# [[main]]
+# parent = "Pages"
+# name = "Contact"
+# url = "/contact"
+
+# [[main]]
+# parent = "Pages"
+# name = "Authors"
+# url = "/authors"
+
+# [[main]]
+# parent = "Pages"
+# name = "Categories"
+# url = "/categories"
+
+# [[main]]
+# parent = "Pages"
+# name = "404 Page"
+# url = "/404"
+
+# footer menu
+[[footer]]
+name = "About"
+url = "/about"
+weight = 1
+
+[[footer]]
+name = "Elements"
+url = "/elements"
+weight = 2
+
+[[footer]]
+name = "Privacy Policy"
+url = "/privacy-policy"
+weight = 3

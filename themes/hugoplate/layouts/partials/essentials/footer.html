@@ -1,0 +1,50 @@
+<footer class="bg-theme-light dark:bg-darkmode-theme-light border-border dark:border-darkmode-border border-t">
+  <div class="container ">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        <!-- navbar brand/logo -->
+        <a class="navbar-brand flex items-center" href="{{ site.Home.RelPermalink }}">
+          {{ partial "image" (dict "Src" "/images/avatar_1.jpg" "Alt" "Avatar image" "Loading" "eager" "Class" "border-2 border-white rounded-full h-12 w-12 mr-4" ) }}
+          Jack Wall
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0 footer-links">
+        Built with <a target="_blank" href="https://gohugo.io/">Hugo</a>, <a target="_blank" href="https://tailwindcss.com/">TailwindCSS</a> & <a target="_blank" href="https://www.netlify.com/">Netlify</a>.
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          <li>
+            <a
+              target="_blank"
+              aria-label=""
+              rel=""
+              class="group/envelope"
+              href="mailto:hello@jackwall.co.uk">
+              <i class="fa fa-envelope group-hover/envelope:text-red-300"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              aria-label=""
+              rel="nofollow noopener"
+              class="group/linkedin"
+              href="https://www.linkedin.com/in/walljack/">
+              <i class="fa-brands fa-linkedin group-hover/linkedin:text-blue-300"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              aria-label=""
+              rel="nofollow noopener"
+              class="group/file"
+              href="/documents/CV_Jack_Wall_2025.pdf">
+              <i class="fa fa-file-pdf group-hover/file:text-orange-300"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

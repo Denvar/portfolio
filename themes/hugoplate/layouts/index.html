@@ -1,0 +1,168 @@
+{{ define "main" }}
+  <!-- Banner -->
+  {{ with .Params.banner }}
+    <section class="section pt-14">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="col-12 mb-8">
+            {{ partial "image" (dict "Src" .image "Alt" "Avatar image" "Loading" "eager" "Class" "rounded-full h-32 w-32 shadow-2xl border-2 border-white mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
+          </div>
+          <div class="lg:col-7 md:col-9 mb-8 text-center">
+            <h1 class="mb-4 text-h3 lg:text-h1">
+              {{ .title | markdownify }}
+            </h1>
+            <p class="text-h5 text-white">
+              {{ .content | markdownify }}
+            </p>
+            <p class="mb-8">
+              {{ .subtitle | markdownify }}
+            </p>
+            <div class="flex justify-center space-x-2">
+              <a
+                class="btn btn-primary"
+                href="mailto:hello@jackwall.co.uk">
+                <i class="fa fa-xl fa-envelope text-red-600 pr-1"></i>
+                <span class="text-red-600">Say Hello</span>
+              </a>
+              <a
+                class="btn btn-primary"
+                target="_blank"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/walljack/">
+                <i class="fa-brands fa-xl fa-linkedin text-[rgb(20,110,190)] pr-1"></i>
+                <span class="text-[rgb(20,110,190)]">Connect on LinkedIn</span>
+              </a>
+              <a
+                class="btn btn-primary"
+                target="_blank"
+                rel="nofollow noopener"
+                href="/documents/CV_Jack_Wall_2021.pdf">
+                <i class="fa fa-xl fa-file-pdf text-orange-600 pr-1"></i>
+                <span class="text-orange-600">Download CV</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Banner -->
+
+  <!-- Features -->
+
+  {{ range $i, $e:= .Params.features }}
+    <section class="section-sm {{ if not (modBool $i 2) }} bg-gradient {{ else }} bg-gradient {{ end }}" id="{{ .id }}">
+      <div class="container">
+        <div
+          class="{{ if not (modBool $i 2) }}
+            md:order-1
+          {{ end }} text-center">
+          <h1 class="mb-4">
+            {{ .title | markdownify }}
+          </h1>
+          <p class="mb-16 text-lg">
+            {{ .content | markdownify }}
+          </p>
+        </div>
+        <div
+          class="mb:md-0 {{ if not (modBool $i 2) }}
+            md:order-2
+          {{ end }} flex flex-row space-x-8 justify-center mb-8">
+          {{ range .images }}
+            <div class="w-full">
+              {{ partial "image" (dict "Src" .url "Alt" .alt "Class" "ease-linear transform hover:scale-110" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+            </div>
+          {{ end }}
+        </div>
+        <div class="mb-16">
+          {{ if .animation }}
+            {{ partial "image" (dict "Src" .animation ) }}
+          {{ end }}
+        </div>
+        {{ if .video }}
+          <div class="mb-16">
+            {{ partial "youtube-lite.html" (dict "Id" .video "Attr" "posterquality=maxresdefault") }}
+          </div>
+        {{ end }}
+        <h3 class="pl-32 mb-8">Highlights</h3>
+        <div class="container flex flex-row space-x-28 px-32 w-full">
+          <ul class="w-full">
+            {{ range $i, $e:= .bulletpoints }}
+              {{ if (modBool $i 2) }}
+                <li class="relative mb-4 pl-6">
+                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                  {{ . | markdownify }}
+                </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+          <ul class="w-full">
+            {{ range $i, $e:= .bulletpoints }}
+              {{ if not (modBool $i 2) }}
+                <li class="relative mb-4 pl-6">
+                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                  {{ . | markdownify }}
+                </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+        {{ if .press }}
+          <div class="items-center text-center pt-16">
+            <p class="text-2xl" style="color: #666666">As featured by</p>
+            <div class="flex flex-row justify-center items-center space-x-8 pt-8">
+              {{ range .press }}
+                <div class="h-12 flex items-center justify-center  p-4">
+                  {{ partial "image" (dict "Src" .url "Class" "w-56" "Alt" .alt) }}
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{/*  {{ range $i, $e:= .Params.features }}
+    <section class="section-sm bg-gradient" id="{{ .id }}">
+      <div class="container">
+        <div class="row items-center justify-between">
+          <div
+            class="mb:md-0 {{ if not (modBool $i 2) }}
+              md:order-2
+            {{ end }} md:col-5 mb-6">
+            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+          </div>
+          <div
+            class="{{ if not (modBool $i 2) }}
+              md:order-1
+            {{ end }} md:col-7 lg:col-6">
+            <h2 class="mb-4">
+              {{ .title | markdownify }}
+            </h2>
+            <p class="mb-8 text-lg">
+              {{ .content | markdownify }}
+            </p>
+            <ul>
+              {{ range .bulletpoints }}
+                <li class="relative mb-4 pl-6">
+                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                  {{ . | markdownify }}
+                </li>
+              {{ end }}
+            </ul>
+            {{ with .button }}
+              {{ if .enable }}
+                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                  {{ .label }}
+                  <i class="fa fa-lg fa-file-pdf pl-2"></i>
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}  */}}
+  <!-- /Features -->
+{{ end }}
