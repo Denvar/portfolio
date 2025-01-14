@@ -84,8 +84,8 @@
             {{ partial "youtube-lite.html" (dict "Id" .video "Attr" "posterquality=maxresdefault") }}
           </div>
         {{ end }}
-        <h3 class="md:pl-32 mb-8">Highlights</h3>
-        <div class="container grid-cols-1 md:grid-cols-2 grid grid-flow-row gap-x-8 gap-y-4 md:px-32 w-full">
+        <h3 class="md:pl-20 pl-4 mb-8">Highlights</h3>
+        <div class="container grid-cols-1 md:grid-cols-2 grid grid-flow-row gap-x-8 gap-y-4 md:px-20 w-full">
             {{ range $i, $e:= .bulletpoints }}
               {{/*  {{ if (modBool $i 2) }}  */}}
               <ul class="w-full">
