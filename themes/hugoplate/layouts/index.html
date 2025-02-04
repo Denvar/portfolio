@@ -1,7 +1,7 @@
 {{ define "main" }}
   <!-- Banner -->
   {{ with .Params.banner }}
-    <section class="section pt-14">
+    <section class="section pt-14 bg-black">
       <div class="container">
         <div class="row justify-center">
           <div class="col-12 mb-8">
@@ -36,7 +36,7 @@
                 class="btn btn-primary"
                 target="_blank"
                 rel="nofollow noopener"
-                href="/documents/CV_Jack_Wall_2021.pdf">
+                href="/documents/CV_Jack_Wall_2025.pdf">
                 <i class="fa fa-xl fa-file-pdf text-orange-600"></i><br />
                 <span class="text-orange-600 text-sm md:text-base">Download CV</span>
               </a>
@@ -67,7 +67,7 @@
         <div
           class="mb:md-0 {{ if not (modBool $i 2) }}
             md:order-2
-          {{ end }} grid-cols-2 md:grid-cols-4 grid grid-flow-row justify-center mb-16">
+          {{ end }} grid-cols-2 md:grid-cols-4 grid grid-flow-row gap-8 justify-center mb-16">
           {{ range .images }}
             <div class="w-full">
               {{ partial "image" (dict "Src" .url "Alt" .alt "Class" "" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
@@ -84,8 +84,8 @@
             {{ partial "youtube-lite.html" (dict "Id" .video "Attr" "posterquality=maxresdefault") }}
           </div>
         {{ end }}
-        <h3 class="md:pl-20 pl-4 mb-8">Highlights</h3>
-        <div class="container grid-cols-1 md:grid-cols-2 grid grid-flow-row gap-x-8 gap-y-4 md:px-20 w-full">
+        <h3 class="md:pl-18 pl-4 mb-8">Highlights</h3>
+        <div class="container grid-cols-1 md:grid-cols-2 grid grid-flow-row gap-x-8 gap-y-4 md:px-18 w-full">
             {{ range $i, $e:= .bulletpoints }}
               {{/*  {{ if (modBool $i 2) }}  */}}
               <ul class="w-full">
@@ -103,7 +103,7 @@
             <div class="grid grid-flow-row grid-cols-2 md:grid-cols-{{ len .press }} gap-y-8 p-8 justify-center items-center pt-8">
               {{ range .press }}
                 <div class="h-12 flex items-center justify-center p-4">
-                  {{ partial "image" (dict "Src" .url "Class" "w-32 md:w-56" "Alt" .alt) }}
+                  {{ partial "image" (dict "Src" .url "Class" "w-40 md:w-56" "Alt" .alt) }}
                 </div>
               {{ end }}
             </div>
