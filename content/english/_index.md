@@ -4,7 +4,7 @@ banner:
   title: "Jack Wall"
   content: "Entrepreneur, Investor & Engineering Leader"
   subtitle: "Techstars, Wayra & Springboard Alumni"
-  image: "/images/avatar_1.jpg"
+  image: "/images/avatar.png"
   buttons:
     - label: "👋 Say Hello"
       link: "https://github.com/zeon-studio/hugoplate"
