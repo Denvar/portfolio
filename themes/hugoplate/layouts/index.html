@@ -48,6 +48,18 @@
   {{ end }}
   <!-- /Banner -->
 
+<!-- Calendly inline widget begin -->
+<section class="section-sm">
+  <div class="container">
+    <h3 class="mb-4">
+      Book a quick 20 minute call to discuss any opportunities
+    </h1>
+  </div>
+  <div class="calendly-inline-widget" data-url="https://calendly.com/jack-wall/20-minute-meeting?hide_event_type_details=1&hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=c4c4c4" style="min-width:320px;height:800px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</section>
+<!-- Calendly inline widget end -->
+
   <!-- Features -->
 
   {{ range $i, $e:= .Params.features }}
@@ -156,3 +168,4 @@
   {{ end }}  */}}
   <!-- /Features -->
 {{ end }}
+

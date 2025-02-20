@@ -153,7 +153,7 @@ features:
   - title: "CompareTheMarket"
     id: "comparethemarket"
     content: "The Meerkat app is where you’ll find all the best things that Compare the Market has to offer"
-    video: "nIqEpJ_cXsE"
+    video: "asCaixSzlw8"
     images:
       - url: "/images/screenshot-ctm-1.webp"
         alt: "project image"
