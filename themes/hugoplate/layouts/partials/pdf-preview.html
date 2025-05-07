@@ -1,10 +1,12 @@
-<div class="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-darkmode-theme-light rounded overflow-hidden border border-gray-200 dark:border-darkmode-border">
-  <iframe
-    src="{{ .Src }}#toolbar=0&navpanes=0&scrollbar=0"
-    title="{{ .Title }}"
-    class="w-full h-72 md:h-96"
-    frameborder="0"
-    loading="lazy"
-    allowfullscreen>
-  </iframe>
+<div class="w-full flex items-center justify-center">
+  <div class="w-full max-w-3xl">
+    <iframe
+      src="{{ .Src }}#toolbar=0&navpanes=0&scrollbar=0"
+      title="{{ .Title }}"
+      class="w-full h-[32rem] rounded border border-gray-200 dark:border-darkmode-border bg-white"
+      frameborder="0"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
 </div> 
