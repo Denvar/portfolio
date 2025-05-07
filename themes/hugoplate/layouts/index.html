@@ -47,21 +47,28 @@
     </section>
   {{ end }}
   <!-- /Banner -->
-<!-- Calendly inline widget begin -->
-<section class="section-sm">
+
+<!-- Previous Talks and Presentations begin -->
+<section class="section-sm bg-theme-light dark:bg-darkmode-theme-light rounded-xl my-12">
   <div class="container">
-    <h3 class="mb-4">
-      Presentations and Talks
-    </h3>
-    Here you can find a list of tqlks and presentations that I've done recently.
+    <h3 class="mb-4 text-h4 font-bold text-center">Presentations and Talks</h3>
+    <p class="text-center text-lg mb-8">Here you can find a list of talks and presentations that I've done recently.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Example: Talk with PDF preview only -->
+      <div class="bg-white dark:bg-darkmode-body rounded-lg shadow-lg p-6 flex flex-col items-center">
+        <h4 class="font-semibold mb-2 text-center">Breaking through the "Manager Ceiling"</h4>
+        <div class="w-full aspect-video mb-4">
+          {{ partial "pdf-preview.html" (dict "Src" "/presentations/Breaking through the Manager Ceiling.pdf" "Title" "Breaking through the Manager Ceiling - Slides") }}
+        </div>
+        <a href="/presentations/Breaking%20through%20the%20Manager%20Ceiling.pdf" class="btn btn-outline-primary mt-2 flex items-center" target="_blank">
+          <i class="fa fa-file-pdf text-orange-600 mr-2"></i> Download Slides (PDF)
+        </a>
+      </div>
+      <!-- Add more talks as needed -->
+    </div>
   </div>
-<ul class="w-full mt-4">
-                <li class="relative pl-6">
-    - <strong>Breaking through the "Manager Ceiling" </strong>[<a href="">slides</a>]
-  </li>
-</ul>
 </section>
-<!-- Calendly inline widget end -->
+<!-- Previous Talks and Presentations end -->
 
 <!-- Calendly inline widget begin -->
 <section class="section-sm">
